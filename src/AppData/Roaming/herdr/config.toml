@@ -1,0 +1,22 @@
+[terminal]
+default_shell = "C:\\Program Files\\Git\\bin\\bash.exe"
+
+onboarding = false
+[update]
+channel = "preview"
+
+[ui.toast]
+delivery = "system"
+
+[ui]
+show_agent_labels_on_pane_borders = true
+
+[ui.sound]
+enabled = true
+
+[experimental]
+pane_history = true
+
+[theme]
+name = "tokyo-night"
+auto_switch = false
