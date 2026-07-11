@@ -1,41 +1,52 @@
 # dotconfig
 
-Managed dotfiles — chezmoi + Oh My Posh + WezTerm + PowerShell.
+Managed dotfiles — chezmoi + Oh My Posh + WezTerm + PowerShell + PSReadLine + fzf + zoxide.
 
 ## Setup on a new machine
 
 ### 1. Install prerequisites
 
-**chezmoi**
 ```powershell
+# chezmoi
 winget install chezmoi
-```
 
-**Oh My Posh**
-```powershell
+# Oh My Posh
 winget install JanDeDobbeleer.OhMyPosh
-```
 
-**WezTerm** (optional, if you want the terminal config)
-```powershell
+# fzf — fuzzy finder
+winget install junegunn.fzf
+
+# zoxide — smart cd
+winget install ajeetdsouza.zoxide
+
+# WezTerm (optional, terminal emulator)
 winget install wez.wezterm
 ```
 
-### 2. Apply
+Then install PowerShell modules:
+
+```powershell
+# PSFzf (PowerShell integration for fzf)
+Install-Module PSFzf -Scope CurrentUser -Force
+
+# PSReadLine (latest version, for autosuggestions & syntax highlight)
+Install-Module PSReadLine -Scope CurrentUser -Force
+```
+
+### 2. Apply dotfiles
 
 ```powershell
 chezmoi init --apply https://github.com/VanKurnia/dotfiles.git
 ```
 
-This clones the repo and copies all config files to the right places.
+### 3. Restart PowerShell
 
-### 3. Open a new PowerShell window
-
-Start a new `pwsh` (PowerShell 7) session — Oh My Posh loads with the Zen theme.
-
-### Windows PowerShell (5.1)
-
-The profile for the legacy `powershell.exe` is also set up. Open a new Windows PowerShell window if you use it.
+Start a new `pwsh` (PowerShell 7) session. If modules installed correctly you get:
+- Oh My Posh prompt (Zen theme)
+- zoxide smart `cd`
+- `Ctrl+t` → fuzzy file picker
+- `Ctrl+r` → fuzzy history search
+- Inline autosuggestions from PSReadLine
 
 ## What gets installed
 
@@ -43,14 +54,25 @@ The profile for the legacy `powershell.exe` is also set up. Open a new Windows P
 |------|---------------|
 | `src/dot_oh-my-posh.toml` | `~/.oh-my-posh.toml` |
 | `src/dot_config/wezterm/wezterm.lua` | `~/.config/wezterm/wezterm.lua` |
-| `src/readonly_Documents/PowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/PowerShell/...` |
-| `src/readonly_Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/WindowsPowerShell/...` |
+| `src/readonly_Documents/PowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1` |
+| `src/readonly_Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` |
+
+## Stack
+
+```
+WezTerm (or any terminal)
+  └── PowerShell 7
+        ├── PSReadLine — autosuggest, syntax highlight, history
+        ├── PSFzf — fuzzy file/history search (Ctrl+t, Ctrl+r)
+        ├── zoxide — smart cd (z, zi)
+        └── Oh My Posh — prompt theme
+```
 
 ## Structure
 
 ```
 ~/.dotconfig/
-  .chezmoiroot → "src"   # chezmoi source root
+  .chezmoiroot → "src"
   src/
     dot_oh-my-posh.toml
     dot_config/wezterm/wezterm.lua
