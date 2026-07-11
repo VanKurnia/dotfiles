@@ -19,11 +19,21 @@ if (Test-Path $dest) { Remove-Item -Force $dest }
 New-Item -ItemType SymbolicLink -Path $dest -Target $target | Out-Null
 Write-Host "  symlink: $dest"
 
-# PowerShell profile
+# PowerShell 7 profile (pwsh)
 $dest = "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 $target = "$sourceDir\powershell\Microsoft.PowerShell_profile.ps1"
 if (-not (Test-Path "$env:USERPROFILE\Documents\PowerShell")) {
     New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Documents\PowerShell" | Out-Null
+}
+if (Test-Path $dest) { Remove-Item -Force $dest }
+New-Item -ItemType SymbolicLink -Path $dest -Target $target | Out-Null
+Write-Host "  symlink: $dest"
+
+# Windows PowerShell profile (powershell.exe)
+$dest = "$env:USERPROFILE\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+$target = "$sourceDir\powershell\windows_profile.ps1"
+if (-not (Test-Path "$env:USERPROFILE\Documents\WindowsPowerShell")) {
+    New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\Documents\WindowsPowerShell" | Out-Null
 }
 if (Test-Path $dest) { Remove-Item -Force $dest }
 New-Item -ItemType SymbolicLink -Path $dest -Target $target | Out-Null
