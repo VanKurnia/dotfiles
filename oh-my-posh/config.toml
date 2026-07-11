@@ -1,0 +1,107 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+
+final_space = true
+
+version = 4
+
+[[blocks]]
+alignment = "left"
+newline = true
+type = "prompt"
+
+[[blocks.segments]]
+background = "#d75f00"
+foreground = "#f2f3f8"
+style = "diamond"
+leading_diamond = "\u256d\u2500\ue0b2"
+template = " {{ .Icon }} "
+type = "os"
+
+[blocks.segments.options]
+windows = "\ue70f"
+linux = "\ue712"
+macos = "\ue711"
+
+[[blocks.segments]]
+background = "#e4e4e4"
+foreground = "#4e4e4e"
+style = "powerline"
+powerline_symbol = "\ue0b0"
+template = " {{ .UserName }} "
+type = "session"
+
+[[blocks.segments]]
+background = "#0087af"
+foreground = "#f2f3f8"
+style = "powerline"
+powerline_symbol = "\ue0b0"
+template = " {{ .Path }} "
+type = "path"
+
+[blocks.segments.options]
+style = "agnoster_short"
+max_depth = 3
+folder_icon = "\u2026"
+folder_separator_icon = " \ue0b1 "
+
+[[blocks.segments]]
+background = "#378504"
+foreground = "#f2f3f8"
+background_templates = [
+  "{{ if or (.Working.Changed) (.Staging.Changed) }}#a97400{{ end }}",
+  "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#54433a{{ end }}",
+  "{{ if gt .Ahead 0 }}#744d89{{ end }}",
+  "{{ if gt .Behind 0 }}#744d89{{ end }}"
+]
+style = "diamond"
+leading_diamond = "\ue0b0"
+template = " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \ue0b1 \uf044 {{ .Working.String }}{{ end }}{{ if .Staging.Changed }} \ue0b1 \uf046 {{ .Staging.String }}{{ end }}"
+trailing_diamond = "\ue0b0"
+type = "git"
+
+[blocks.segments.options]
+branch_template = "{{ trunc 25 .Branch }}"
+fetch_status = true
+branch_icon = "\uf418 "
+branch_identical_icon = "\uf444"
+branch_gone_icon = "\ueab8"
+
+[[blocks]]
+alignment = "right"
+type = "prompt"
+
+[[blocks.segments]]
+background = "#e4e4e4"
+foreground = "#585858"
+invert_powerline = true
+style = "powerline"
+powerline_symbol = "\ue0b2"
+template = " \ueba2 {{ .FormattedMs }} "
+type = "executiontime"
+
+[blocks.segments.options]
+style = "austin"
+always_enabled = true
+
+[[blocks.segments]]
+background = "#d75f00"
+foreground = "#f2f3f8"
+invert_powerline = true
+style = "diamond"
+template = " \uf073 {{ .CurrentDate | date .Format }} "
+trailing_diamond = "\ue0b0"
+type = "time"
+
+[blocks.segments.options]
+time_format = "15:04:05"
+
+[[blocks]]
+alignment = "left"
+newline = true
+type = "prompt"
+
+[[blocks.segments]]
+foreground = "#d75f00"
+style = "plain"
+template = "\u2570\u2500 {{ if .Root }}#{{else}}${{end}}"
+type = "text"
