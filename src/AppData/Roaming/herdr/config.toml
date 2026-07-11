@@ -1,3 +1,6 @@
+[terminal]
+default_shell = "pwsh"
+
 onboarding = false
 [update]
 channel = "preview"

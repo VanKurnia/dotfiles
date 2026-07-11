@@ -1,8 +1,10 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
---- default shell: Git Bash
-config.default_prog = { 'C:/Program Files/Git/bin/bash.exe', '-l' }
+--- default shell: PowerShell 7
+config.default_prog = { 'pwsh.exe' }
+--- fallback: uncomment to use Git Bash instead
+--- config.default_prog = { 'C:/Program Files/Git/bin/bash.exe', '-l' }
 
 --- Font ---
 config.font = wezterm.font 'JetBrainsMono NFM'
