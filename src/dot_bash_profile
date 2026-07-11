@@ -1,0 +1,6 @@
+# Bash profile (login shell) — managed via chezmoi
+
+# Source the main RC
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi

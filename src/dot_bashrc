@@ -1,0 +1,4 @@
+# Bash RC — managed via chezmoi
+
+# Oh My Posh prompt
+eval "$(oh-my-posh init bash --config ~/.oh-my-posh.toml)"
