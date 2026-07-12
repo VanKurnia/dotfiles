@@ -1,0 +1,39 @@
+# Windows metadata
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+ehthumbs.db
+*.lnk
+
+# Editor / IDE
+*.swp
+*.swo
+*~
+*.bak
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.csproj.user
+
+# macOS metadata (cross-platform safety)
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Agent / tool generated directories (dot-prefixed dirs)
+.*/
+
+# Python bytecode
+*.pyc
+__pycache__/
+
+# chezmoi state files (should live outside repo, but just in case)
+chezmoi-state*

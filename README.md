@@ -64,10 +64,13 @@ Start a new `pwsh` session. You get:
 
 | File | Home location |
 |------|---------------|
+| `src/dot_bashrc` | `~/.bashrc` |
+| `src/dot_bash_profile` | `~/.bash_profile` |
 | `src/dot_oh-my-posh.toml` | `~/.oh-my-posh.toml` |
 | `src/dot_config/wezterm/wezterm.lua` | `~/.config/wezterm/wezterm.lua` |
 | `src/readonly_Documents/PowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/PowerShell/Microsoft.PowerShell_profile.ps1` |
 | `src/readonly_Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` | `~/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1` |
+| `src/AppData/Roaming/herdr/config.toml` | `~/AppData/Roaming/herdr/config.toml` |
 
 ## Stack
 
@@ -85,11 +88,15 @@ WezTerm / herdr
 ```
 ~/.dotconfig/
   .chezmoiroot → "src"
+  .gitignore
   src/
+    dot_bashrc
+    dot_bash_profile
     dot_oh-my-posh.toml
     dot_config/wezterm/wezterm.lua
     readonly_Documents/PowerShell/Microsoft.PowerShell_profile.ps1
     readonly_Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1
+    AppData/Roaming/herdr/config.toml
 ```
 
 ## Daily use
