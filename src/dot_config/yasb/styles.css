@@ -1020,3 +1020,197 @@
 .media-menu .app-volume-container .unmute-button {
     color: #a0a0a0;
 }
+
+/* Todo Widget */
+.todo-widget {
+    padding: 0 6px 0 6px;
+}
+.todo-widget .icon {
+    padding: 0;
+}
+.todo-widget .label {
+    font-size: 12px;
+    padding: 0;
+}
+
+/* Todo Menu */
+.todo-menu {
+    background-color: rgba(24, 25, 27, 0.8);
+    min-width: 420px;
+    max-width: 420px;
+    min-height: 400px;
+    max-height: 600px;
+}
+.todo-menu .header {
+    margin: 16px 10px;
+}
+.todo-menu .header .add-task-button {
+    border: none;
+    border-radius: 13px;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+    font-family: var(--system-font);
+}
+.todo-menu .header .tab-buttons {
+    border: none;
+    border-radius: 13px;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0px;
+    font-family: var(--system-font);
+}
+.todo-menu .header .add-task-button:hover {
+    background-color: var(--yasb-accent);
+}
+.todo-menu .header .tab-buttons.in-progress,
+.todo-menu .header .tab-buttons.completed {
+    background-color: transparent;
+}
+.todo-menu .header .tab-buttons.in-progress:checked {
+    color: var(--yasb-accent);
+}
+.todo-menu .header .tab-buttons.completed:checked {
+    color: #ff583b;
+}
+
+/* Task item styles */
+.todo-menu .task-item {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 0px 12px 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 0;
+}
+.todo-menu .task-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.todo-menu .task-checkbox {
+    background-color: transparent;
+    border: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 14px;
+    padding: 0;
+}
+.todo-menu .task-item .title {
+    color: #ebebeb;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--system-font);
+    padding: 0 8px;
+    margin-top: 6px;
+}
+.todo-menu .task-item.completed .title,
+.todo-menu .task-item.completed .description {
+    text-decoration: line-through;
+    color: #7f8c8d;
+}
+.todo-menu .task-item .description {
+    color: #bdc3c7;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 8px 8px 8px;
+    font-family: var(--system-font);
+}
+
+/* Task info row with icons */
+.todo-menu .task-info-row {
+    padding: 0 10px 4px 10px;
+    display: flex;
+    align-items: center;
+}
+.todo-menu .task-info-row .category-icon {
+    margin-left: 8px;
+    margin-right: 4px;
+    font-size: 12px;
+}
+.todo-menu .task-info-row .category-text {
+    margin-right: 12px;
+    font-size: 11px;
+}
+.todo-menu .task-info-row .date-icon {
+    margin-left: 8px;
+    margin-right: 4px;
+    font-size: 12px;
+}
+.todo-menu .task-info-row .date-text {
+    font-size: 11px;
+    color: #7f849c;
+}
+.todo-menu .task-info-row .edit-task-button,
+.todo-menu .task-info-row .delete-task-button {
+    margin-left: auto;
+    margin-right: 6px;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.todo-menu .task-info-row .edit-task-button:hover,
+.todo-menu .task-info-row .delete-task-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Todo Widget */
+.todo-widget {
+    padding: 0 12px;
+}
+.todo-widget .widget-container {
+    padding: 0 6px;
+}
+.todo-widget .icon {
+    margin-right: 8px;
+    font-size: 14px;
+    font-family: "JetBrainsMono NFP", "JetBrainsMono Nerd Font Propo";
+}
+.todo-widget .label {
+    font-weight: 500;
+}
+
+/* Todo Menu Context */
+.todo-menu .context-menu {
+    min-width: 320px;
+}
+
+/* Systray Widget */
+.systray {
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+.systray .unpinned-container {
+    background: transparent;
+}
+.systray .pinned-container {
+    background: transparent;
+}
+.systray .button {
+    border-radius: 4px;
+    padding: 2px;
+}
+.systray .button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.systray .button.drag-over {
+    background: rgba(255, 255, 255, 0.4);
+}
+.systray .pinned-container.drop-target {
+    background: rgba(255, 255, 255, 0.1);
+}
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 20px;
+    width: 16px;
+    border: none;
+    outline: none;
+}
+.systray .unpinned-visibility-btn:checked {
+    background: transparent;
+}
+.systray .unpinned-visibility-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
